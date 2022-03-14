@@ -1,4 +1,5 @@
 const mysql = require("mysql2");
+const { findAllEmployees } = require(".");
 
 const dbConnection = mysql.createConnection(
   {
@@ -12,4 +13,4 @@ const dbConnection = mysql.createConnection(
   console.log(`Connected to the employees database.`)
 );
 
-module.exports = dbConnection;
+const sql = (module.exports = dbConnection);

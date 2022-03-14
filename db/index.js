@@ -5,19 +5,29 @@ class db {
     this.dbConnection = dbConnection;
   }
 
-  findAllEmployees() {
+  getAllEmployees() {
     return this.dbConnection.promise().query("SELECT * FROM employees");
   }
 
-  findallroles;
+  getAllDepartments() {
+    return this.dbConnection.promise().query("SELECT * FROM depatment");
+  }
 
-  findalldepartments;
+  getAllRoles() {
+    return this.dbConnection.promise().query("SELECT * FROM role");
+  }
 
-  findallmanagers;
+  getAllManagers() {
+    return this.dbConnection.promise().query("SELECT * FROM manager");
+  }
 
-  findallsalary;
+  getAllSalaries() {
+    return this.dbConnection.promise().query("SELECT * FROM salary");
+  }
 
-  createnewemployee;
+  getNewEmployee() {
+    return this.dbConnection.promise().query("CREATE new employee");
+  }
 }
 
 module.exports = new db(dbConnection);
