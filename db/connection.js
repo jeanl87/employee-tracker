@@ -1,5 +1,5 @@
 const mysql = require("mysql2");
-const { findAllEmployees } = require(".");
+//const { findAllEmployees } = require(".");
 
 const dbConnection = mysql.createConnection(
   {
