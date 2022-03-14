@@ -1,6 +1,7 @@
 const db = require("./db");
 const inquirer = require("inquirer");
 const table = require("console.table");
+const { end } = require("./db/connection");
 
 function promptMenu() {
   inquirer
@@ -17,6 +18,12 @@ function promptMenu() {
           "Add a Role",
           "Add an Employee",
           "Update an Employee Role",
+          "Update employee managers",
+          "View employees by manager",
+          "View employees by department",
+          "Delete department",
+          "Delete role",
+          "Delete employee",
         ],
       },
     ])
@@ -43,7 +50,28 @@ function promptMenu() {
         case "Update Employee Role":
           promptUpdateEmployeeRole();
           break;
-        case "End":
+        case "Update Employee Manager":
+          promptUpdateEmployeeManager();
+          break;
+        case "View Employee by Manager":
+          viewEmployeebyManager();
+          break;
+        case "View Employee by Department":
+          viewEmployeebyDepartment();
+          break;
+        case "Delete Employee":
+          deleteEmployee();
+          break;
+        case "Delete Role":
+          deleteRole();
+          break;
+        case "Delete Department":
+          deleteDepartmet();
+          break;
+        case "Exit":
+          break;
+        default:
+          exit();
       }
     });
 }
